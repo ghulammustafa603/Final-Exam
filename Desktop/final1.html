@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakat Calculator</title>
+  <link rel="stylesheet" href="final.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Zakat Calculator</h2>
+    <div class="nisab">
+      <p><strong>Nisab Threshold:</strong></p>
+      <label>
+        <input type="radio" name="nisab" value="1473000" checked> Value of Gold (approximately Rs. 1,473,000)
+      </label>
+      <br>
+      <label>
+        <input type="radio" name="nisab" value="114713"> Value of Silver (approximately Rs. 114,713)
+      </label>
+    </div>
+    <div class="field">
+        <header>Cash</header>
+        <br>
+      <label for="cash">Cash in hand & in bank accounts (Rs):</label>
+      <input type="number" id="cash" placeholder="Enter the amount">
+    </div>
+    <div class="field">
+      <label for="future_cash">Cash deposited for future purposes, e.g., Hajj (Rs):</label>
+      <input type="number" id="future_cash" placeholder="Enter the amount">
+    </div>
+    <div class="field">
+      <label for="loans">Cash given out in loans (Rs):</label>
+      <input type="number" id="loans" placeholder="Enter the amount">
+    </div>
+    <div class="field">
+      <label for="investments">Investments, shares, etc. (Rs):</label>
+      <input type="number" id="investments" placeholder="Enter the amount">
+    </div>
+    <div class="field">
+        <header>Gold and Silver</header>
+        <br>
+      <label for="gold">Value of Gold (Rs):</label>
+      <input type="number" id="gold" placeholder="Enter the value of gold">
+    </div>
+    <div class="field">
+      <label for="silver">Value of Silver (Rs):</label>
+      <input type="number" id="silver" placeholder="Enter the value of silver">
+    </div>
+    <div class="field">
+        <header>Trade Goods</header>
+        <br>
+      <label for="stock">Value of Stock (Rs):</label>
+      <input type="number" id="stock" placeholder="Enter the value of stock">
+    </div>
+    <div class="field">
+        <header>Liabilities</header>
+        <br>
+      <label for="liabilities">Liabilities (Rs):</label>
+      <input type="number" id="liabilities" placeholder="Enter total liabilities">
+    </div>
+    <button onclick="calculateZakat()">Calculate Zakat</button>
+    <div class="result" id="result">
+      <p><strong>Total Net Worth</strong> <br><h2>Rs. 0</h2></p>
+      <p><strong>Zakat Payable</strong> <br><h2>Rs. 0</h2></p>
+    </div>
+    <div id=lastdiv>Give Your Zakat</div>
+  </div>
+
+  <script src="final.js"></script>
+</body>
+</html>
