@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './TrafficLightSimulator.css';
 
 const TrafficLightSimulator = () => {
+  const cycleLights = ['red', 'green', 'yellow'];
   const [activeLight, setActiveLight] = useState('red');
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveLight(prev => {
-        if (prev === 'red') return 'green';
-        if (prev === 'green') return 'yellow';
-        return 'red';
+      setActiveLight(prevLight => {
+        const currentIndex = cycleLights.indexOf(prevLight);
+        const nextIndex = (currentIndex + 1) % cycleLights.length;
+        return cycleLights[nextIndex];
       });
-    }, 2000);
+    }, 3000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, []);
 
